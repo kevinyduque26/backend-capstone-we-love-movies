@@ -1,11 +1,15 @@
 if (process.env.USER) require("dotenv").config();
 const express = require("express");
+const cors = require("cors");
 const app = express();
 
 // Imports
 const moviesRouter = require("./movies/movies.router");
 const reviewsRouter = require("./reviews/reviews.router");
 const theatersRouter = require("./theaters/theaters.router");
+
+// Cors
+app.use(cors());
 
 // JSON middleware
 app.use(express.json());
