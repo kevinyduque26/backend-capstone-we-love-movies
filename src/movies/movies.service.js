@@ -57,7 +57,7 @@ const addCritics = mapProperties({
     critics_updated_at: "critic.updated_at"
 });
 
-async function readReviews(movieId) {
+function readReviews(movieId) {
     return knex("reviews")
         .join("critics", "reviews.critic_id", "critics.critic_id")
         .select(
