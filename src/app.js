@@ -4,13 +4,16 @@ const app = express();
 
 // Imports
 const moviesRouter = require("./movies/movies.router");
+const reviewsRouter = require("./reviews/reviews.router");
+const theatersRouter = require("./theaters/theaters.router");
 
 // JSON middleware
 app.use(express.json());
 
 // Routing
 app.use("/movies", moviesRouter);
-
+app.use("/reviews", reviewsRouter);
+app.use("/theaters", theatersRouter);
 
 // Not found handler
 app.use((req, res, next) => {

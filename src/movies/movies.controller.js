@@ -60,12 +60,7 @@ async function readTheaters(req, res) {
 
 async function readReviews(req, res) {
 
-    console.log(req.params.movieId);
-
     const reviews = await service.readReviews(req.params.movieId);
-
-    console.log(reviews)
-
     res.json({ data: reviews });
 
 };

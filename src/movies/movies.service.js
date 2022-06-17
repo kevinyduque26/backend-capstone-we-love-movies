@@ -9,9 +9,9 @@ function list(is_showing) {
         .modify((queryBuilder) => {
             if(is_showing) {
                 queryBuilder
-                .join("movies_theaters", "movies.movie_id", "movies_theaters.movie_id")
-                .where({ "movies_theaters.is_showing": true })
-                .groupBy("movies.movie_id")
+                    .join("movies_theaters", "movies.movie_id", "movies_theaters.movie_id")
+                    .where({ "movies_theaters.is_showing": true })
+                    .groupBy("movies.movie_id")
             }
         });
 };
@@ -70,8 +70,11 @@ function readReviews(movieId) {
             "critics.updated_at as critics_updated_at",
         )
         .where({ "reviews.movie_id": movieId })
-        .then(addCritics);
+        .then((reviews) => {
+            return reviews.map((review) => addCritics(review));
+        });
 };
+
 
 module.exports = {
     list,
