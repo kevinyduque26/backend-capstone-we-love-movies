@@ -71,7 +71,7 @@ The response from the server for a request to `/movies/1/theaters` should look l
       "created_at": "2021-02-23T20:48:13.342Z",
       "updated_at": "2021-02-23T20:48:13.342Z",
       "is_showing": true,
-      "movie_id": 1
+      "movie_id": 1 
     }
     // ...
   ]
